@@ -10,8 +10,7 @@ def create_connection():
     """ create a database connection to a SQLite database """
     conn = None
     try:
-        conn = SQL(os.getenv("postgres://kkeecgtmrvdhhu:5c2c8cba3d13dc8a62bbb25913d6e10f1b620cb9bf258ceb1f4e45c965cea96a@ec2-54-74-14-109.eu-west-1.compute.amazonaws.com:5432/d1nfej218i2kg1
-"))
+        conn = SQL(os.getenv("postgres://kkeecgtmrvdhhu:5c2c8cba3d13dc8a62bbb25913d6e10f1b620cb9bf258ceb1f4e45c965cea96a@ec2-54-74-14-109.eu-west-1.compute.amazonaws.com:5432/d1nfej218i2kg1"))
     except Error as e:
         print(e)
 
