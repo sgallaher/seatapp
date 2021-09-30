@@ -3,13 +3,14 @@ import os
 from flask import Flask,redirect,render_template, request, session
 from flask_session import Session
 from flask import jsonify
+from CS50 import SQL
 
 
-def create_connection(db_file):
+def create_connection():
     """ create a database connection to a SQLite database """
     conn = None
     try:
-        conn = sqlite3.connect(db_file)
+        conn = SQL(os.getenv("DATABASE_URL"))
     except Error as e:
         print(e)
 
@@ -17,7 +18,7 @@ def create_connection(db_file):
 
 def select_tasks(sql):
 
-    db = create_connection("DATABASE_U")
+    db = create_connection()
     """
     Query all rows in the tasks table
     :param conn: the Connection object
