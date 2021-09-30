@@ -1,5 +1,4 @@
 import sqlite3
-import os
 from flask import Flask,redirect,render_template, request, session
 from flask_session import Session
 from flask import jsonify
@@ -17,7 +16,7 @@ def create_connection(db_file):
 
 def select_tasks(sql):
 
-    db = create_connection("DATABASE_U")
+    db = create_connection("hp.db")
     """
     Query all rows in the tasks table
     :param conn: the Connection object
